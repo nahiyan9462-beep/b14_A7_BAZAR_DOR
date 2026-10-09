@@ -6,7 +6,7 @@ import { IProducts } from '@/types/products';
 import React from 'react';
 
 const Marquee = async() => {
-    const res= await fetch('https://api.api-store.workers.dev/api/bazardor/products')
+    const res= await fetch('https://api.abcz.workers.dev/api/bazardor/products')
     const data:IProducts[] =await res.json()
     const headlines = data
     console.log(headlines) 

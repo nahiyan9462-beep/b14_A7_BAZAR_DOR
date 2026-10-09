@@ -1,9 +1,9 @@
 export interface IProducts{
-    id: number,
-    slug:  string,
-    nameBn:  string,
-    category:  string,
-    categoryNameBn:  string,
+   id: number,
+    slug: string,
+    nameBn: string,
+    category: string,
+    categoryNameBn: string,
     categoryIcon: string,
     unit: string,
     image: string,
@@ -14,5 +14,5 @@ export interface IProducts{
     change: {
       dir: string,
       pct: number
-    }  
+    }   
 }

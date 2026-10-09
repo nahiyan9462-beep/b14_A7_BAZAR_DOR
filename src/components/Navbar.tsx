@@ -15,20 +15,22 @@ const Navbar = () => {
             <DateTime />
           </div>
 
-          <div className="flex w-full gap-2 sm:w-auto">
-            <Button variant="outline" className='flex-1 sm:flex-none '>Sign In</Button>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <Button variant="outline" className='
+            inline-flex items-center justify-center rounded-xl border border-[#b8dcd3] bg-white/70 px-7 py-3.5 text-base font-semibold text-[#24534d] transition duration-200 hover:bg-white
+            '>Sign In</Button>
 
             <Button
-                variant="danger"
-              className="flex-1 sm:flex-none"
+              variant="danger"
+              className="inline-flex items-center justify-center rounded-xl bg-[#12a765] px-7 py-3.5 text-base font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:bg-[#0d8e56] hover:shadow-lg"
             >
               Sign Up
             </Button>
           </div>
-        </div>
-        <div className="mt-4 border-t border-gray-200 pt-4 dark:border-gray-800">
-          <Navlinks />
-        </div>
+        </div>         
+        
+        <Navlinks />
+         
       </div>
     </header>
   );

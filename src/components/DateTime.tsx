@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 
 export default function DateTime() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState( new Date());
 
   useEffect(() => {
     const timer = setInterval(() => {
