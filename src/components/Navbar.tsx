@@ -3,6 +3,7 @@ import React from "react";
 import DateTime from "./DateTime";
 import { Button } from "@heroui/react";
 import Navlinks from "./Navlinks";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -19,13 +20,14 @@ const Navbar = () => {
             <Button variant="outline" className='
             inline-flex items-center justify-center rounded-xl border border-[#b8dcd3] bg-white/70 px-7 py-3.5 text-base font-semibold text-[#24534d] transition duration-200 hover:bg-white
             '>Sign In</Button>
-
+            <Link href='/sign-up'>
             <Button
               variant="danger"
               className="inline-flex items-center justify-center rounded-xl bg-[#12a765] px-7 py-3.5 text-base font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:bg-[#0d8e56] hover:shadow-lg"
             >
               Sign Up
             </Button>
+            </Link>
           </div>
         </div>         
         

@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import {Eye, EyeSlash} from "@gravity-ui/icons";
-import {Button, Description, FieldError, Form, Input, InputGroup, Label, TextField} from "@heroui/react";
+import {Button, Card, Description, FieldError, Form, Input, InputGroup, Label, TextField} from "@heroui/react";
 import { signIn, signUp } from '@/lib/auth-clients';
 
 
@@ -49,8 +49,8 @@ const SignUpPage = () => {
 };
     return (
 
-            <div className='min-h-screen flex items-center justify-center shadow-lg'>
-            <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
+         <Card className="min-h-screen flex items-center justify-center mx-w-md w-full shadow-lg">
+            <Form className="flex w-96 h-96 flex-col gap-4" onSubmit={onSubmit}>
                 <TextField
                     isRequired
                     name="name"
@@ -128,14 +128,13 @@ const SignUpPage = () => {
                     Reset
                     </Button>
                 </div>
-                <div className='container items-center'>
-                    <Button onClick={handleGoogleSignIn}>Sign In with Google</Button>
-                </div>
-                <div className='container items-center'>
+                <div className='container mx-auto items-center gap-4'>
+                    <Button
+                    onClick={handleGoogleSignIn}>Sign In with Google</Button>
                     <Button onClick={handleGitHubSignIn}>Sign In with GitHub</Button>
                 </div>
             </Form>
-            </div>
+         </Card>
           
     );
 };

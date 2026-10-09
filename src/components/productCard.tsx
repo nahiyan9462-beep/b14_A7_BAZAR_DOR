@@ -14,7 +14,7 @@ export default function ProductCard({ products }: ProductCardProps) {
   const isDown = products.change.dir === "down";
 
   return (
-    <article className="group relative overflow-hidden rounded-3xl border shadow-lg shadow-black/20 transition-all duration-500 hover:-translate-y-2 hover:border-slate-700 hover:shadow-2xl hover:shadow-black/40">
+    <article className="group relative overflow-hidden rounded-3xl border shadow-lg  transition-all duration-500 hover:-translate-y-2 hover:border-green-700 hover:shadow-2xl hover:shadow-black/40">
       
       {/* Image */}
       <div className="relative h-60 overflow-hidden "> 

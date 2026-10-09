@@ -1,6 +1,7 @@
 "use client";
 
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function DateTime() {
@@ -41,9 +42,11 @@ export default function DateTime() {
       </div>
 
       <div className="flex flex-col">
+        <Link href='/'>
         <h1 className="text-2xl font-bold">
           BAZAR DOR
         </h1>
+        </Link>
 
         <p className="text-sm text-gray-500">
           {formattedDate}
