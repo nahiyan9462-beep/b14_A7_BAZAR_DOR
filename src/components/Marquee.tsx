@@ -4,8 +4,12 @@ import MarqueeText from "react-marquee-text"
 import "react-marquee-text/dist/styles.css"
 import { IProducts } from '@/types/products';
 import React from 'react';
+import { cacheLife } from "next/cache";
 
 const Marquee = async() => {
+    "use cache";
+
+  cacheLife("hours");
     const res= await fetch('https://api.abcz.workers.dev/api/bazardor/products')
     const data:IProducts[] =await res.json()
     const headlines = data

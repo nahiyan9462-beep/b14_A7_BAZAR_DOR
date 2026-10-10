@@ -1,44 +1,37 @@
+"use client";
 
+import {Button, Dropdown, Label} from "@heroui/react";
+import {useState} from "react";
 
-'use client'
-import {useSession } from '@/lib/auth-clients';
-import { Button, Spinner} from '@heroui/react';
-import Link from 'next/link';
-import React from 'react';
+export function ControlledOpenState() {
+  const [open, setOpen] = useState(false);
 
-
- 
- 
-
-const UserInfo = () => {
-     const {data:session,isPending}= useSession();
-  console.log('user session in Navbar', session);
-
-  if(isPending){
-    return <div className="min-h-screen flex items-center justify-center gap-4">
-      <Spinner />
-       loading...
+  return (
+    <div className="flex min-w-sm flex-col items-center justify-center gap-4">
+      <p className="text-sm text-muted">
+        Dropdown is: <strong>{open ? "open" : "closed"}</strong>
+      </p>
+      <Dropdown isOpen={open} onOpenChange={setOpen}>
+        <Button aria-label="Menu" variant="secondary">
+          Actions
+        </Button>
+        <Dropdown.Popover>
+          <Dropdown.Menu>
+            <Dropdown.Item id="new-file" textValue="New file">
+              <Label>New file</Label>
+            </Dropdown.Item>
+            <Dropdown.Item id="open-file" textValue="Open file">
+              <Label>Open file</Label>
+            </Dropdown.Item>
+            <Dropdown.Item id="save-file" textValue="Save file">
+              <Label>Save file</Label>
+            </Dropdown.Item>
+            <Dropdown.Item id="delete-file" textValue="Delete file" variant="danger">
+              <Label>Delete file</Label>
+            </Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown.Popover>
+      </Dropdown>
     </div>
-    }
-
-    return (
-         <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <Link href='/sign-in'>
-                <Button variant="outline" className='
-                inline-flex items-center justify-center rounded-xl border border-[#b8dcd3] bg-white/70 px-7 py-3.5 text-base font-semibold text-[#24534d] transition duration-200 hover:bg-white
-                '>Sign In</Button>
-            </Link>
-            <Link href='/sign-up'>
-                <Button
-                    
-                variant="danger"
-                className="inline-flex items-center justify-center rounded-xl bg-[#12a765] px-7 py-3.5 text-base font-semibold text-white shadow-md transition duration-200 hover:-translate-y-0.5 hover:bg-[#0d8e56] hover:shadow-lg"
-                >
-                Sign Up
-                </Button>
-            </Link>
-          </div>
-    );
-};
-
-export default UserInfo;
+  );
+}

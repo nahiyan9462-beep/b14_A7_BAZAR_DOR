@@ -1,6 +1,7 @@
 import { IProducts } from '@/types/products';
 import React from 'react';
-import ProductCard from '../../components/productCard';
+import ProductCard from './productCard';
+ 
 
 const Products = async() => {
     const res = await fetch('https://api.abcz.workers.dev/api/bazardor/products')
