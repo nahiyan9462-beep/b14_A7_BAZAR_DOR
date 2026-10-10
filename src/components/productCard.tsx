@@ -18,6 +18,7 @@ export default function ProductCard({ products }: ProductCardProps) {
       
       {/* Image */}
       <div className="relative h-60 overflow-hidden "> 
+        
 
         {/* Image overlay */}
         <div className="absolute inset-0 bg-gradient-to-t " />
