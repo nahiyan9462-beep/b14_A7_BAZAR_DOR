@@ -5,8 +5,9 @@
 
 import React, { useState } from 'react';
 import {Eye, EyeSlash} from "@gravity-ui/icons";
-import {Button, Card, Description, FieldError, Form, Input, InputGroup, Label, TextField} from "@heroui/react";
+import {Button, Card, Description, FieldError, Form, Input, InputGroup, Label, TextField, toast} from "@heroui/react";
 import { signIn, signUp } from '@/lib/auth-clients';
+import { redirect } from 'next/navigation';
 
 
 const SignUpPage = () => {
@@ -46,6 +47,17 @@ const SignUpPage = () => {
         password:data.password,
     })
     console.log(resData,error);
+
+
+    if(resData){ 
+
+        console.log(data);
+        redirect('/');
+       
+    }
+    if(error){
+        console.log(error)
+    }
 };
     return (
 
@@ -120,12 +132,25 @@ const SignUpPage = () => {
                         <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
                     </TextField>
                 <div className="flex gap-2">
-                    <Button type="submit">
-                    {/* <Check /> */}
-                    Submit
+                    <Button type="submit" 
+                    
+                        variant="tertiary"
+                        onPress={() => {
+                            const id = toast.success("Your account has been created successfully.", {
+                            actionProps: {
+                                children: "Billing",
+                                className: "bg-success text-success-foreground",
+                                onPress: () => toast.close(id),
+                            },
+                            description: "You’re all set to get started. Explore our platform, discover what we have to offer, and enjoy your experience with us.Thank you for joining us!"
+                            });
+                        }}
+                    >
+                     
+                        Submit
                     </Button>
                     <Button type="reset" variant="secondary">
-                    Reset
+                        Reset
                     </Button>
                 </div>
                 <div className='container mx-auto items-center gap-4'>

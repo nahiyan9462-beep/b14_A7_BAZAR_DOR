@@ -43,7 +43,7 @@ export default function DateTime() {
 
       <div className="flex flex-col">
         <Link href='/'>
-        <h1 className="text-2xl font-bold">
+        <h1 className="text-2xl font-bold text-green-700">
           BAZAR DOR
         </h1>
         </Link>
