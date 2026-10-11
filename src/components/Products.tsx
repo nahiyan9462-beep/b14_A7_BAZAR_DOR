@@ -13,8 +13,8 @@ const Products = async() => {
         <section className='container mx-auto'>
             <div className='grid gap-5 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5'>
             {
-                products.map((products:IProducts,ind:number)=>{
-                    return <ProductCard key={ind} products={products}></ProductCard>
+                products.map((products:IProducts)=>{
+                    return <ProductCard key={products.id} products={products}></ProductCard>
                 })
             }
             </div>
